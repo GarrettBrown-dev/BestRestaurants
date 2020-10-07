@@ -3,13 +3,13 @@
 }
 
 @using BestRestaurant.Models;
-@model List<BestRestaurant.Models.Restaurant>;
+@model List<BestRestaurant.Models.Cuisine>;
 
 <h1>Restaurants</h1>
 
 @if (@Model.Count == 0)
 {
-  <h3>No cuisiness have been added yet!</h3>
+  <h3>No cuisines have been added yet!</h3>
 } 
 
 @foreach (Cuisine cuisine in Model)

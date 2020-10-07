@@ -18,7 +18,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Index()
     {
-      List<Cuisine> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).ToList();
+      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).ToList();
       return View(model);
     }
 
@@ -38,7 +38,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Details(int id)
     {
-      Item thisRestaurant = _db.Restaurant.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       return View(thisRestaurant);
     }
 
@@ -66,7 +66,7 @@ namespace BestRestaurant.Controllers
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantsId == id);
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       _db.Restaurants.Remove(thisRestaurant);
       _db.SaveChanges();
       return RedirectToAction("Index");
