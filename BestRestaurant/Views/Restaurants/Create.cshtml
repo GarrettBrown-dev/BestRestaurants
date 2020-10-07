@@ -4,11 +4,16 @@
 
 @model BestRestaurant.Models.Restaurant
 
-<h4>Add a new task</h4>
+<h4>Add a new Restaurant</h4>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Description)
     @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.Location)
+    @Html.TextBoxFor(model => model.Location)
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)
+
     
     @Html.LabelFor(model => model.Cuisine)
     @Html.DropDownList("CuisineId")
