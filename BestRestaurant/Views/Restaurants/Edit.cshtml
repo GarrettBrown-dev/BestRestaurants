@@ -12,6 +12,8 @@
 {
     @Html.HiddenFor(model => model.RestaurantId)
 
+   
+
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
     @Html.LabelFor(model => model.Location)
@@ -21,6 +23,8 @@
 
     @Html.LabelFor(model => model.Cuisine)
     @Html.DropDownList("CuisineId")
+
+  
 
     <input type="submit" value="Save" />
 }
