@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace BestRestaurant.Models
 {
@@ -11,6 +12,7 @@ namespace BestRestaurant.Models
 
     public int CuisineId { get; set; }
     public string Name { get; set; }
+    public DateTime DateAdded { get; set; }
     public virtual ICollection<Restaurant> Restaurants { get; set; }
   }
 }
